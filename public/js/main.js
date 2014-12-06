@@ -14,6 +14,6 @@ $(function() {
     });
 
     function changeText(status) {
-        $btn.html(status ? 'Prender' : 'Apagar');
+        $btn.html(!status ? 'Prender' : 'Apagar');
     }
 });
