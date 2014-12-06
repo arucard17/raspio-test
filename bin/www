@@ -2,9 +2,9 @@
 
 var debug = require('debug')('expressapp');
 var app = require('../app');
-// var initSocket = require('./initSocket');
-// var raspi = require('raspi-io');
-// var board = new raspi();
+var initSocket = require('./initSocket');
+var raspi = require('raspi-io');
+var board = new raspi();
 
 app.set('port', process.env.PORT || 3000);
 
@@ -13,6 +13,6 @@ var server = app.listen(app.get('port'), function() {
     debug('Express server listening on port ' + server.address().port);
 });
 
-// board.on('ready', function() {
-//     initSocket(server, board);
-// });
+board.on('ready', function() {
+    initSocket(server, board);
+});
