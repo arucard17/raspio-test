@@ -27,8 +27,7 @@ $(function() {
             for (var i = event.resultIndex; i < event.results.length; i++) {
                 if (event.results[i].isFinal) {
                     str = event.results[i]
-                        [0].transcript + ' (Confidence: ' +
-                        event.results[i][0].confidence + ')';
+                        [0].transcript;
                     emitServer(str);
                 } else {
                     str += event.results[
