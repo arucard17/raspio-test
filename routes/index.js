@@ -8,4 +8,10 @@ router.get('/', function(req, res) {
     });
 });
 
+router.get('/voice', function(req, res) {
+    res.render('voice', {
+        title: 'Test Raspi-io With Voice'
+    });
+});
+
 module.exports = router;

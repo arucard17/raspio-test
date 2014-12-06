@@ -6,3 +6,40 @@ body {
 a {
   color: #00B7FF;
 }
+
+#btnLed.active span{
+    color:#e4ff0c;
+}
+
+#listen{
+    border: 1px solid #d3d3d3;
+    background-color: #dddddd;
+    width: 30%;
+    height: 220px;
+    padding: 10px;
+}
+
+#btnListen{
+    display: table;
+    margin:auto;
+    font-size:10em;
+}
+
+#btnListen.active{
+    color:#6368f5;
+}
+
+#btnListen:hover{
+    cursor:pointer;
+}
+
+#listen h3{
+    font-size: 14px;
+    margin: auto;
+    color: rgb(106, 123, 242);
+    display:none;
+}
+
+#listen h3.active{
+    display: table;
+}

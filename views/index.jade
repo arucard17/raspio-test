@@ -1,6 +1,11 @@
 extends layout
 
+block js
+    script(src='/js/main.js')
+
 block content
     div#content
-    button(id="btnLed", type="button") Prender
+        button#btnLed.btn.btn-primary(type="button") 
+            span.glyphicon.glyphicon-certificate
+            |  Prender
     
