@@ -9,6 +9,7 @@ module.exports = function (server, board){
         });
 
         socket.on('speechRec', function(data) {
+            console.log(data);
             if(data.speech == 'encender')
                 board.pins[7].value = board.HIGH;
             else
