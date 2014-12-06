@@ -83,7 +83,7 @@ $(function() {
             }
         }
     }
-    
+
     function emitServer(str){
         socket.emit('speechRec', {
             speech: str
