@@ -22,16 +22,13 @@ $(function() {
 
         // Start recognising
         recognizer.onresult = function(event) {
-            $result.html('');
             var str = '';
             for (var i = event.resultIndex; i < event.results.length; i++) {
                 if (event.results[i].isFinal) {
-                    str = event.results[i]
-                        [0].transcript;
+                    str = event.results[i][0].transcript;
                     emitServer(str);
                 } else {
-                    str += event.results[
-                        i][0].transcript;
+                    str += event.results[i][0].transcript;
                 }
                 console.log(str);
             }
@@ -67,8 +64,10 @@ $(function() {
             if (status) {
                 start();
 
-                $btn.removeClass().addClass(
-                    'animated flash active');
+                $btn
+                    .removeClass()
+                    .addClass('animated flash active');
+                    
                 $listen.addClass('active');
             } else {
                 stop();
@@ -83,7 +82,7 @@ $(function() {
         }
     }
 
-    function emitServer(str){
+    function emitServer(str) {
         socket.emit('speechRec', {
             speech: str
         });

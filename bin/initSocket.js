@@ -12,7 +12,7 @@ module.exports = function (server, board){
             console.log(data);
             if(data.speech == 'encender')
                 board.pins[7].value = board.HIGH;
-            else
+            else if(data.speech == 'apagar')
                 board.pins[7].value = board.LOW;
         });
 
