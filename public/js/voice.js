@@ -24,12 +24,8 @@ $(function() {
         recognizer.onresult = function(event) {
             var str = '';
             for (var i = event.resultIndex; i < event.results.length; i++) {
-                if (event.results[i].isFinal) {
-                    str = event.results[i][0].transcript;
-                    emitServer(str);
-                } else {
-                    str += event.results[i][0].transcript;
-                }
+                str = event.results[i][0].transcript;
+                emitServer(str);
                 console.log(str);
             }
         };
@@ -67,7 +63,7 @@ $(function() {
                 $btn
                     .removeClass()
                     .addClass('animated flash active');
-                    
+
                 $listen.addClass('active');
             } else {
                 stop();
