@@ -24,9 +24,11 @@ $(function() {
         recognizer.onresult = function(event) {
             var str = '';
             for (var i = event.resultIndex; i < event.results.length; i++) {
-                str = event.results[i][0].transcript;
-                emitServer(str);
-                console.log(str);
+                if(str == cleanResult(event.results[i][0].transcript)){
+                    str = event.results[i][0].transcript;
+                    console.log(str);
+                    emitServer(cleanResult(str));
+                }
             }
         };
 
@@ -82,6 +84,10 @@ $(function() {
         socket.emit('speechRec', {
             speech: str
         });
+    }
+
+    function cleanResult(str){
+        return str.replace(' ', '');
     }
 
 });
