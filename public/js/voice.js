@@ -24,9 +24,9 @@ $(function() {
         recognizer.onresult = function(event) {
             var str = '';
             for (var i = event.resultIndex; i < event.results.length; i++) {
-                if(str == cleanResult(event.results[i][0].transcript)){
+                if(str == event.results[i][0].transcript){
                     str = event.results[i][0].transcript;
-                    console.log(str);
+                    console.log(cleanResult(str));
                     emitServer(cleanResult(str));
                 }
             }
